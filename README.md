@@ -105,31 +105,6 @@ Any standard single-column resume template works. Tested with:
 
 ---
 
-## Roadmap (productionize this)
-
-When you are ready to turn this into a full product:
-
-- [ ] Angular 17 frontend with proper routing
-- [ ] .NET 8 API wrapping the Claude calls with retry logic and rate limiting
-- [ ] Azure Function for async processing of large resumes
-- [ ] Azure Blob Storage for resume version history
-- [ ] SQL Server to persist sessions and optimization history per user
-- [ ] Azure B2C for authentication
-- [ ] PDF upload support via Azure Document Intelligence (extract text → convert to LaTeX)
-- [ ] Side-by-side Overleaf preview iframe
-
----
-
-## Project structure
-
-```
-latex-resume-optimizer/
-├── resume-optimizer.jsx   # The full React artifact — paste into Claude to run
-└── README.md              # This file
-```
-
----
-
 ## License
 
 MIT — use it, fork it, productionize it.
