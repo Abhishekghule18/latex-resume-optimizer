@@ -4,6 +4,14 @@
 
 ---
 
+## Using with ChatGPT?
+
+The `resume-optimizer.jsx` file is a **Claude Artifact** (React/JSX) — it only runs inside Claude's chat interface. ChatGPT does not support JSX artifact rendering, so pasting the file there will just display raw code.
+
+**ChatGPT users:** See [CHATGPT_GUIDE.md](CHATGPT_GUIDE.md) for a text-based alternative that delivers the same ATS scoring and optimized LaTeX output using [chatgpt-prompt.md](chatgpt-prompt.md) — no setup required.
+
+---
+
 ## What it does
 
 **ATS Matching & Optimization**
