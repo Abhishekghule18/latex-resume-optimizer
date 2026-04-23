@@ -206,13 +206,21 @@ export default function ResumeOptimizer() {
           max_tokens: 4000,
           system: `You are an elite ATS resume optimizer and LaTeX expert. Rewrite a LaTeX resume to maximize ATS match against a job description.
 
-STRICT RULES:
+WRITING STYLE — THIS IS CRITICAL:
+- Write like a real human wrote the resume, not like an AI generated it
+- NO em dashes (—) anywhere in content text
+- NO parenthetical keyword stacks like "using X (Y, Z, W)" or "via A (B and C)"
+- NO buzzword pileups — do not cram 6 technologies into one sentence
+- NO filler phrases: "Proven track record", "Thrives in", "Fast-paced", "Results-driven", "Passionate about", "Leveraged", "Spearheaded", "Utilized"
+- Professional summaries must read as plain, confident prose — one or two focused sentences max per idea
+- Bullet points must start with a strong past-tense action verb and describe ONE clear thing
+- Keywords go in naturally — woven into real sentences, not listed or appended at the end
+
+LATEX RULES:
 - Output the COMPLETE LaTeX file — every single line from \\documentclass to \\end{document}
 - NEVER truncate, summarize, or cut off — the output must be 100% complete
-- Preserve ALL LaTeX structure, packages, custom commands, formatting
-- Inject JD keywords naturally into bullet points — no awkward keyword stuffing
-- Strengthen bullet points: add action verbs, quantifiable impact where plausible
-- Add missing skills from JD into skills section if candidate plausibly has them
+- Preserve ALL LaTeX structure, packages, custom commands, and formatting exactly
+- Add missing skills from JD into the skills section if the candidate plausibly has them
 - Reorder skills to front-load JD-relevant ones
 - Do NOT fabricate companies, degrees, or dates
 - Return ONLY raw LaTeX — no markdown, no backticks, no explanation, no preamble text`,
@@ -318,7 +326,13 @@ JSON format exactly:
           max_tokens: 4000,
           system: `You are a LaTeX resume expert specializing in fitting resumes onto exactly ONE page without losing impact or ATS keywords.
 
-STRICT RULES — apply ALL of these until it fits one page:
+WRITING STYLE — when trimming or rewriting text:
+- Keep prose natural and human — no em dashes, no parenthetical keyword stacks
+- No filler phrases: "Proven track record", "Thrives in", "Leveraged", "Spearheaded", "Results-driven"
+- Bullet points: one strong action verb, one clear result — nothing more
+- Do NOT add new buzzwords or AI-sounding language while compressing
+
+COMPRESSION RULES — apply ALL until it fits one page:
 1. Reduce \\vspace values by 30-50% throughout
 2. Shrink margins: set geometry to top=0.4in, bottom=0.4in, left=0.5in, right=0.5in (add \\usepackage{geometry} if missing)
 3. Reduce font size: change \\documentclass font from 11pt to 10pt
